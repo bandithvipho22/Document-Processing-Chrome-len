@@ -16,7 +16,8 @@ A Document Processing, OCR (Optical Character Recognition) application for extra
 
 ## Objectives
 
-- A fresh start with OCR for document processing on web interface using next.js, and FastAPI
+- A fresh start with OCR by using Chrome-lens-py for document extraction
+- Deploy locally on web interface using next.js, and FastAPI
 - Extract text from images (PNG, JPG, JPEG) and PDF files with high accuracy
 - Support multiple languages including Khmer, English, Japanese, and more
 - Provide a user-friendly web interface for document uploads and processing

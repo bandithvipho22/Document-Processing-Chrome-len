@@ -55,28 +55,26 @@ A Document Processing, OCR (Optical Character Recognition) application for extra
 5. **Display Results** → Frontend shows extracted text
 6. **Export Options** → Download or copy text
 
-## 📦 Requirements
+## 🏗️ Project Structure
 
-### System Requirements
-- **OS**: Windows, macOS, or Linux
-- **RAM**: Minimum 2GB (4GB+ recommended)
-- **Disk Space**: 500MB for dependencies
-
-### Software Requirements
-
-#### Option 1: Using uv (Recommended - Fast)
-- **Python 3.14+**
-- **uv** package manager ([install guide](https://docs.astral.sh/uv/))
-- **Node.js 18+** (for frontend)
-
-#### Option 2: Using pip (Standard)
-- **Python 3.14+**
-- **pip** (included with Python)
-- **Node.js 18+** (for frontend)
-
-#### Option 3: Docker (Easiest)
-- **Docker Engine**
-- **Docker Compose**
+```
+OCR/
+├── ocr_app/                 # FastAPI
+│   ├── app.py              # Main 
+├── core/
+│   └── ocr_demo_v1.py      # OCR 
+├── frontend/               # Next.js
+│   ├── pages/
+│   ├── components/
+│   ├── styles/
+│   └── public/
+├── pyproject.toml         
+├── requirements.txt        
+├── docker-compose.yml      
+├── Dockerfile             
+├── LICENSE                
+└── README.md             
+```
 
 ## 🚀 Getting Started
 
@@ -219,29 +217,6 @@ curl -X POST "http://localhost:8000/api/ocr" \
 | `/api/ocr` | POST | Process document and extract text |
 | `/health` | GET | Health check endpoint |
 | `/` | GET | Web UI (legacy) |
-
----
-
-## 🏗️ Project Structure
-
-```
-OCR/
-├── ocr_app/                 # FastAPI
-│   ├── app.py              # Main 
-├── core/
-│   └── ocr_demo_v1.py      # OCR 
-├── frontend/               # Next.js
-│   ├── pages/
-│   ├── components/
-│   ├── styles/
-│   └── public/
-├── pyproject.toml         
-├── requirements.txt        
-├── docker-compose.yml      
-├── Dockerfile             
-├── LICENSE                
-└── README.md             
-```
 
 ---
 

@@ -10,9 +10,9 @@ A Document Processing, OCR (Optical Character Recognition) application for extra
 
 ## 📋 About
 
-**Khmer OCR** is a document processing system designed to extract text from images and PDF files with high accuracy. It specializes in Khmer language OCR while supporting multiple other languages. The system provides a clean REST API backend and modern web interface for seamless document processing.
+**This project** is a document processing system designed to extract text from images and PDF files with high accuracy. The main purpose is focusing on Khmer language OCR while supporting multiple other languages. The system provides a clean REST API backend and modern web interface for seamless document processing.
 
-**Next Step:** Plan to fine-tune OCR model for Khmer Language Specification, and deploy on web interfaces.
+**Next Step:** We also plan to fine-tune our own Khmer OCR model for Khmer Language Specification and run it on local to prevent some sensitive documents, then we deploy on web interfaces.
 
 ## Objectives
 

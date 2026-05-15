@@ -5,7 +5,7 @@ A Document Processing, OCR (Optical Character Recognition) application for extra
 ## Demo
 
 <p align="center">
-  <img src="example/Demo_1.gif" alt="Khmer OCR Demo" width="800"/>
+  <img src="example/Demo_1.gif" alt="Khmer OCR Demo" width="500"/>
 </p>
 
 ## 📋 About

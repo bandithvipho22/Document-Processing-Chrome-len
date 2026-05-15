@@ -1,0 +1,26 @@
+# Khmer OCR System - Production Requirements
+# Generated from pyproject.toml
+
+# Core OCR Libraries
+chrome-lens-py @ git+https://github.com/bropines/chrome-lens-py.git
+ocrmypdf>=17.3.0
+ocrmypdf-chromelens-ocr>=1.0.7
+
+# PDF Processing
+pdfplumber>=0.11.9
+pymupdf>=1.27.2
+
+# Data Processing
+pandas>=3.0.1
+tabulate>=0.10.0
+
+# Web Framework
+fastapi>=0.115.5
+uvicorn[standard]>=0.30.6
+python-multipart>=0.0.9
+
+# Environment and utilities
+python-dotenv>=1.0.0
+
+# Production server
+gunicorn>=21.0.0

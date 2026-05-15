@@ -1,0 +1,49 @@
+# Frontend - Next.js
+FROM node:18-alpine AS builder
+
+WORKDIR /app
+
+# Copy package files
+COPY frontend/package*.json ./
+
+# Install dependencies
+RUN npm ci
+
+# Copy source code
+COPY frontend .
+
+# Create .env.local for build (use backend URL accessible in Docker)
+RUN echo "NEXT_PUBLIC_API_BASE_URL=http://backend:8000" > .env.local && \
+    echo "NEXT_PUBLIC_MAX_FILE_SIZE=10485760" >> .env.local && \
+    echo "NEXT_PUBLIC_ALLOWED_FORMATS=.png,.jpg,.jpeg,.pdf" >> .env.local
+
+# Build Next.js (add verbose output for debugging)
+RUN npm run build || (echo "Build failed. Check logs above." && exit 1)
+
+# Production stage
+FROM node:18-alpine
+
+WORKDIR /app
+
+# Copy package files
+COPY frontend/package*.json ./
+
+# Install only production dependencies
+RUN npm ci --only=production
+
+# Copy built application from builder
+COPY --from=builder /app/.next ./.next
+COPY --from=builder /app/package*.json ./
+RUN addgroup -g 1001 -S nodejs
+RUN adduser -S nextjs -u 1001
+USER nextjs
+
+# Health check
+HEALTHCHECK --interval=30s --timeout=10s --start-period=5s --retries=3 \
+    CMD wget --quiet --tries=1 --spider http://localhost:3000/ || exit 1
+
+# Run Next.js
+EXPOSE 3000
+ENV NEXT_ENV=docker
+ENV NEXT_PUBLIC_API_BASE_URL=http://backend:8000
+CMD ["npm", "start"]

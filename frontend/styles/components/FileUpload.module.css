@@ -1,0 +1,134 @@
+.container {
+    margin-bottom: var(--spacing-lg);
+}
+
+.dropzone {
+    position: relative;
+    border: 2px dashed var(--color-gray-300);
+    border-radius: var(--radius-xl);
+    padding: var(--spacing-3xl) var(--spacing-2xl);
+    text-align: center;
+    cursor: pointer;
+    transition: all var(--transition-normal);
+    background-color: var(--color-gray-50);
+}
+
+.dropzone:hover {
+    border-color: var(--color-primary);
+    background-color: var(--color-primary-light);
+}
+
+.dropzone.active {
+    border-color: var(--color-primary);
+    background-color: var(--color-primary-light);
+    box-shadow: 0 0 0 3px rgba(59, 130, 246, 0.1);
+}
+
+.dropzone.disabled {
+    opacity: 0.6;
+    cursor: not-allowed;
+    pointer-events: none;
+}
+
+.input {
+    display: none;
+}
+
+.label {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    width: 100%;
+}
+
+.icon {
+    color: var(--color-primary);
+    margin-bottom: var(--spacing-md);
+    display: flex;
+    justify-content: center;
+}
+
+.text {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-sm);
+}
+
+.title {
+    font-size: var(--font-size-lg);
+    font-weight: var(--font-weight-semibold);
+    color: var(--color-gray-900);
+    margin: 0;
+}
+
+.subtitle {
+    color: var(--color-gray-600);
+    font-size: var(--font-size-base);
+    margin: 0;
+}
+
+.hint {
+    color: var(--color-gray-500);
+    font-size: var(--font-size-sm);
+    margin: 0;
+}
+
+.fileInfo {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: var(--spacing-md) var(--spacing-lg);
+    background-color: var(--color-success);
+    color: white;
+    border-radius: var(--radius-md);
+    margin-top: var(--spacing-md);
+    font-size: var(--font-size-sm);
+}
+
+.fileName {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    font-weight: var(--font-weight-medium);
+}
+
+.fileName svg {
+    flex-shrink: 0;
+}
+
+.fileSize {
+    color: rgba(255, 255, 255, 0.9);
+}
+
+.error {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-md);
+    padding: var(--spacing-md) var(--spacing-lg);
+    background-color: var(--color-error-light);
+    color: var(--color-error);
+    border-radius: var(--radius-md);
+    margin-top: var(--spacing-md);
+    font-size: var(--font-size-sm);
+}
+
+.error svg {
+    flex-shrink: 0;
+}
+
+@media (max-width: 640px) {
+    .dropzone {
+        padding: var(--spacing-2xl) var(--spacing-lg);
+    }
+
+    .title {
+        font-size: var(--font-size-base);
+    }
+
+    .fileInfo {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: var(--spacing-sm);
+    }
+}
